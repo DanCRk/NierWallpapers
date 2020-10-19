@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+    <group android:checkableBehavior="single">
+        <item
+        android:id="@+id/calificanos"
+        android:title="Calificanos"
+        android:checkable="true">
+    </item>
+        <item
+            android:id="@+id/otra_cosa"
+            android:title="Principal"
+            android:checkable="true">
+        </item>
+        <item
+            android:id="@+id/otra_cosa2"
+            android:title="Principal"
+            android:checkable="true">
+        </item>
+    </group>
+</menu>

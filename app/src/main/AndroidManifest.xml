@@ -16,10 +16,10 @@
         tools:ignore="AllowBackup" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:label="@string/title_activity_main">
         </activity>
-        <activity android:name=".SplashActivity" >
+        <activity android:name=".SplashActivity"
+            android:theme="@style/Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
