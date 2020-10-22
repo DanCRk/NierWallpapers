@@ -1,4 +1,4 @@
-package com.wallpaper.nier;
+package com.wallpaper.nier.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,35 +11,38 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
-import com.wallpaper.nier.adaptadores.PagerAdapter;
+import com.wallpaper.nier.R;
+import com.wallpaper.nier.adaptadores.PagerControler;
 
 
-public class MainFragment extends Fragment {
+public class MainFragment extends Fragment{
 
     TabLayout tabLayout;
     ViewPager viewPager;
 
-    PagerAdapter pagerAdapter;
+    PagerControler pagerControler;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_main, container, false);
-
+        View view = inflater.inflate(R.layout.fragment_main, container, false);
         tabLayout = view.findViewById(R.id.tabLayout);
         viewPager = view.findViewById(R.id.viewPager);
 
-        pagerAdapter = new PagerAdapter(getChildFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(pagerAdapter);
+        pagerControler = new PagerControler(getChildFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(pagerControler);
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
-                if (tab.getPosition() == 0){
-                    pagerAdapter.notifyDataSetChanged();
+                if(tab.getPosition()==0){
+                    pagerControler.notifyDataSetChanged();
                 }
-                if (tab.getPosition() == 1){
-                    pagerAdapter.notifyDataSetChanged();
+                if(tab.getPosition()==1){
+                    pagerControler.notifyDataSetChanged();
+                }
+                if(tab.getPosition()==2){
+                    pagerControler.notifyDataSetChanged();
                 }
             }
 
@@ -54,7 +57,6 @@ public class MainFragment extends Fragment {
             }
         });
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
         return view;
     }
 }

@@ -1,4 +1,4 @@
-package com.wallpaper.nier;
+package com.wallpaper.nier.fragments;
 
 import android.os.Bundle;
 
@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.wallpaper.nier.R;
 
 public class tab1Fragment extends Fragment {
 
