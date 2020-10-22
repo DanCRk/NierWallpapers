@@ -9,43 +9,34 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.FirebaseDatabase;
 import com.wallpaper.nier.R;
-import com.wallpaper.nier.adaptadores.AdapterTab1;
-import com.wallpaper.nier.entidades.Wpp_tab1;
+import com.wallpaper.nier.entidades.Wallpapers;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class tab3Fragment extends Fragment {
 
-    AdapterTab1 adapterTab1;
-    RecyclerView recyclerViewpalabras;
-    ArrayList<Wpp_tab1> wpp_tab1s;
+    RecyclerView recyclerView;
+    List<Wallpapers> wallpapers;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tab3, container, false);
-        recyclerViewpalabras = view.findViewById(R.id.recyclerViewTab3);
-        wpp_tab1s = new ArrayList<>();
-        // Cargar la lista
+        recyclerView = view.findViewById(R.id.recyclerViewTab3);
 
-        cargarLista();
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),3));
 
-        //mostrar datos
+        wallpapers = new ArrayList<>();
 
-        mostrarData();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+
 
         return view;
     }
-    public void cargarLista(){
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_3));
-    }
 
-    public void mostrarData(){
-        recyclerViewpalabras.setLayoutManager(new GridLayoutManager(getContext(), 3));
-        adapterTab1 = new AdapterTab1(getContext(), wpp_tab1s);
-        recyclerViewpalabras.setAdapter(adapterTab1);
-    }
+
 
 }

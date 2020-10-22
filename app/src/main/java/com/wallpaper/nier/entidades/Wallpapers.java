@@ -1,11 +1,11 @@
 package com.wallpaper.nier.entidades;
 
-public class Wpp_tab1 {
+public class Wallpapers {
     private int imagenid;
 
-    public Wpp_tab1(){ }
+    public Wallpapers(){ }
 
-    public Wpp_tab1(int imagenid) {
+    public Wallpapers(int imagenid) {
         this.imagenid = imagenid;
     }
 

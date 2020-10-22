@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.wallpaper.nier.R;
 import com.wallpaper.nier.adaptadores.AdapterTab1;
-import com.wallpaper.nier.entidades.Wpp_tab1;
+import com.wallpaper.nier.entidades.Wallpapers;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class tab1Fragment extends Fragment {
 
     AdapterTab1 adapterTab1;
     RecyclerView recyclerViewpalabras;
-    ArrayList<Wpp_tab1> wpp_tab1s;
+    ArrayList<Wallpapers> wpp_tab1s;
 
 
     @Override
@@ -47,33 +47,33 @@ public class tab1Fragment extends Fragment {
     }
 
     public void cargarLista(){
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_3));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_3));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_3));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_3));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_3));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_3));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_3));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_3));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_3));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
     }
 
 

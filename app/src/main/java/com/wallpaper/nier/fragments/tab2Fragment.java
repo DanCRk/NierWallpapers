@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 import com.wallpaper.nier.R;
 import com.wallpaper.nier.adaptadores.AdapterTab1;
-import com.wallpaper.nier.entidades.Wpp_tab1;
+import com.wallpaper.nier.entidades.Wallpapers;
 
 import java.util.ArrayList;
 
@@ -20,7 +20,7 @@ public class tab2Fragment extends Fragment {
 
     AdapterTab1 adapterTab1;
     RecyclerView recyclerViewpalabras;
-    ArrayList<Wpp_tab1> wpp_tab1s;
+    ArrayList<Wallpapers> wpp_tab1s;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -39,9 +39,9 @@ public class tab2Fragment extends Fragment {
     }
 
     public void cargarLista(){
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wpp_tab1(R.drawable.wpp_3));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
     }
 
     public void mostrarData(){

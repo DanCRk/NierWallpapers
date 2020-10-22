@@ -10,18 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wallpaper.nier.R;
-import com.wallpaper.nier.entidades.Wpp_tab1;
+import com.wallpaper.nier.entidades.Wallpapers;
 
 import java.util.ArrayList;
 
 public class AdapterTab1 extends RecyclerView.Adapter<AdapterTab1.ViewHolder> implements View.OnClickListener{
 
     LayoutInflater inflater;
-    public ArrayList<Wpp_tab1> model;
+    public ArrayList<Wallpapers> model;
 
     private View.OnClickListener listener;
 
-    public AdapterTab1(Context context, ArrayList<Wpp_tab1> model){
+    public AdapterTab1(Context context, ArrayList<Wallpapers> model){
          this.inflater = LayoutInflater.from(context);
          this.model = model;
     }
@@ -64,7 +64,7 @@ public class AdapterTab1 extends RecyclerView.Adapter<AdapterTab1.ViewHolder> im
         }
     }
 
-    public void filtrar(ArrayList<Wpp_tab1> filtroPalabras){
+    public void filtrar(ArrayList<Wallpapers> filtroPalabras){
         this.model = filtroPalabras;
         notifyDataSetChanged();
     }
