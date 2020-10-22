@@ -9,13 +9,13 @@
         android:checkable="true">
     </item>
         <item
-            android:id="@+id/otra_cosa"
-            android:title="Principal"
+            android:id="@+id/privacidad"
+            android:title="Acuerdo de Privacidad"
             android:checkable="true">
         </item>
         <item
-            android:id="@+id/otra_cosa2"
-            android:title="Principal"
+            android:id="@+id/acerca_de"
+            android:title="Acerca de"
             android:checkable="true">
         </item>
     </group>

@@ -9,4 +9,6 @@
     <color name="azul_btn">#0072D5</color>
     <color name="azul_oscuro">#0730FF</color>
     <color name="azul_texto">#4986FF</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

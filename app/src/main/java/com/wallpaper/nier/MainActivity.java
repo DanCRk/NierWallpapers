@@ -1,5 +1,6 @@
 package com.wallpaper.nier;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     NavigationView navigationView;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -70,6 +73,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.container, new MainFragment());
             fragmentTransaction.commit();
+        }
+        if (menuItem.getItemId() == R.id.privacidad) {
+            Intent intent = new Intent(MainActivity.this, FullscreenActivity.class);
+            startActivity(intent);
+        }
+        if (menuItem.getItemId() == R.id.acerca_de) {
+            Intent intent = new Intent(MainActivity.this, AcercadeActivity.class);
+            startActivity(intent);
         }
         return false;
     }

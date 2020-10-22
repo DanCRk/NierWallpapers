@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Nier Wallpapers</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -14,4 +14,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="open">open</string>
     <string name="close">close</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="privacidaddd" tools:ignore="Typos">Todos los wallpapers en esta app están bajo una licencia creative common y el credito le pertenece a sus respectivos creadores estas imágenes no están respaldadas por ninguno de los posibles propietarios, y las imágenes se utilizan simplemente con fines estéticos. No se pretende infringir los derechos de autor y se aceptará cualquier solicitud para eliminar una de las imágenes.
+</string>
 </resources>
