@@ -7,7 +7,6 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.wallpaper.nier.fragments.tab1Fragment;
 import com.wallpaper.nier.fragments.tab2Fragment;
-import com.wallpaper.nier.fragments.tab3Fragment;
 
 public class PagerControler extends FragmentPagerAdapter {
     int numtabs;
@@ -25,8 +24,6 @@ public class PagerControler extends FragmentPagerAdapter {
                 return new tab1Fragment();
             case 1:
                 return new tab2Fragment();
-            case 2:
-                return new tab3Fragment();
             default:
                 return null;
         }

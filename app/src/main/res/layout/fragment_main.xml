@@ -33,12 +33,6 @@
             android:layout_height="wrap_content"
             android:text="AUTOMATA" />
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/opcion3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="REPLICANT" />
-
     </com.google.android.material.tabs.TabLayout>
 
 

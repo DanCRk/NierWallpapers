@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "548992643107",
+    "firebase_url": "https://wallpapersnier.firebaseio.com",
+    "project_id": "wallpapersnier",
+    "storage_bucket": "wallpapersnier.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548992643107:android:68f74cc23d8fb17f2d8196",
+        "android_client_info": {
+          "package_name": "com.wallpaper.nier"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "548992643107-pphss62fu3tlc1gm5jbp081agvnmncr9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wallpaper.nier",
+            "certificate_hash": "28c2b8c4dc23b077da799d47255566a90027eb8b"
+          }
+        },
+        {
+          "client_id": "548992643107-lti09lu8kntmjv8s67p9d6tit5s4e5s0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPd5dIWMMeyQCAMiKUsQU-b_hLQ6etBlg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "548992643107-lti09lu8kntmjv8s67p9d6tit5s4e5s0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
