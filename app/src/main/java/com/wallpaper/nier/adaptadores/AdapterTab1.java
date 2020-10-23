@@ -63,9 +63,4 @@ public class AdapterTab1 extends RecyclerView.Adapter<AdapterTab1.ViewHolder> im
             imageView = itemView.findViewById(R.id.imagen_wpp);
         }
     }
-
-    public void filtrar(ArrayList<Wallpapers> filtroPalabras){
-        this.model = filtroPalabras;
-        notifyDataSetChanged();
-    }
 }

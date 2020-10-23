@@ -50,34 +50,34 @@ public class tab1Fragment extends Fragment {
         wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
         wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
         wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_4));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_5));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_6));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_7));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_8));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_9));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_10));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_11));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_12));
+        /*wpp_tab1s.add(new Wallpapers(R.drawable.wpp_13));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_14));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_15));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_16));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_17));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_18));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_19));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_20));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_21));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_22));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_23));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_24));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_25));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_26));
+        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_27));*/
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
+   /* @RequiresApi(api = Build.VERSION_CODES.N)
     private void setWallpaperlock() {
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.wpp_1);
         WallpaperManager manager = WallpaperManager.getInstance(getContext());
@@ -96,7 +96,7 @@ public class tab1Fragment extends Fragment {
         } catch (IOException e) {
             Toast.makeText(getContext(), "Error!", Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 
     public void mostrarData(){
         recyclerViewpalabras.setLayoutManager(new GridLayoutManager(getContext(),3));
@@ -106,7 +106,7 @@ public class tab1Fragment extends Fragment {
         adapterTab1.setOnClickLister(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setWallpaper();
+                //setWallpaper();
                 Toast.makeText(getContext(),"Toast", Toast.LENGTH_LONG).show();
             }
         });

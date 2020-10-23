@@ -25,13 +25,13 @@
             android:id="@+id/opcion1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="NIER" />
+            android:text="AUTOMATA" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/opcion2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="AUTOMATA" />
+            android:text="NIER" />
 
     </com.google.android.material.tabs.TabLayout>
 
