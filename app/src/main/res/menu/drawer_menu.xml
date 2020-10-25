@@ -18,5 +18,10 @@
             android:title="Acerca de"
             android:checkable="true">
         </item>
+        <item
+            android:id="@+id/comparte"
+            android:title="Comparte la app"
+            android:checkable="true">
+        </item>
     </group>
 </menu>

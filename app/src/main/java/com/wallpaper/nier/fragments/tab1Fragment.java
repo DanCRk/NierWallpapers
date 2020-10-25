@@ -24,25 +24,17 @@ import com.wallpaper.nier.entidades.Fruta2;
 
 public class tab1Fragment extends Fragment {
 
-
-
     RecyclerView recyclerView;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tab1, container, false);
         recyclerView = view.findViewById(R.id.recyclerViewTab1);
 
-        // Cargar la lista
-
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
+        FrutaAdapter2 frutaAdapter2= new FrutaAdapter2(FrutaService2.frutas, R.layout.item, getParentFragment());
+        recyclerView.setAdapter(frutaAdapter2);
 
-        FrutaAdapter2 frutaAdapter = new FrutaAdapter2(FrutaService2.frutas, R.layout.item, getParentFragment());
-
-
-
-        recyclerView.setAdapter(frutaAdapter);
 
         cargarDatos();
 
@@ -109,4 +101,5 @@ public class tab1Fragment extends Fragment {
     }*/
 
     }
+
 }

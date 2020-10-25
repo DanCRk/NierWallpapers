@@ -75,7 +75,7 @@
         android:id="@+id/version"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="version 1.4.4"
+        android:text="version 1.0.0"
         android:textColor="@color/azul_texto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

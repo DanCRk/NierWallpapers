@@ -1,6 +1,7 @@
 package com.wallpaper.nier;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     NavigationView navigationView;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
+    private String url;
 
 
 
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        url= "https://play.google.com/store/apps/details?id=com.Automat.proyect_dinero";
 
         // Referenciar las weas locas
 
@@ -69,10 +73,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         drawerLayout.closeDrawer(GravityCompat.START);
         if (menuItem.getItemId() == R.id.calificanos) {
-            fragmentManager = getSupportFragmentManager();
-            fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container, new MainFragment());
-            fragmentTransaction.commit();
+            Uri uri = Uri.parse(url);
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
         }
         if (menuItem.getItemId() == R.id.privacidad) {
             Intent intent = new Intent(MainActivity.this, FullscreenActivity.class);
@@ -81,6 +84,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (menuItem.getItemId() == R.id.acerca_de) {
             Intent intent = new Intent(MainActivity.this, AcercadeActivity.class);
             startActivity(intent);
+        }
+        if (menuItem.getItemId()==R.id.comparte){
+            Intent compartir = new Intent(Intent.ACTION_SEND);
+            compartir.setType("text/plain");
+            String mensaje = "Prueba esta app de Wallpapers de Nier/Nier Automata: https://play.google.com/store/apps/details?id=com.Automat.proyect_dinero";
+            compartir.putExtra(Intent.EXTRA_SUBJECT,"App prrona");
+            compartir.putExtra(Intent.EXTRA_TEXT, mensaje);
+            startActivity(Intent.createChooser(compartir,"Compartir via"));
         }
         return false;
     }

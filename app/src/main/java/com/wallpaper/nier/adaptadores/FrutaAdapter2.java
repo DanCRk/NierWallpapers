@@ -15,12 +15,12 @@ import com.wallpaper.nier.entidades.Fruta2;
 
 import java.util.List;
 
-public class FrutaAdapter2 extends RecyclerView.Adapter<FrutaAdapter2.FrutaHolder>{
+public class FrutaAdapter2 extends RecyclerView.Adapter<FrutaAdapter2.FrutaHolder> implements View.OnClickListener {
 
     List<Fruta2> lsita;
     int layout;
     Fragment activity;
-
+    private View.OnClickListener listener;
 
     public FrutaAdapter2(List<Fruta2> lsita, int layout, Fragment activity) {
         this.lsita = lsita;
@@ -46,10 +46,18 @@ public class FrutaAdapter2 extends RecyclerView.Adapter<FrutaAdapter2.FrutaHolde
         return lsita.size();
     }
 
-    /*public void setOnClickLister(View.OnClickListener lister) {
+    @Override
+    public void onClick(View v) {
+        if (listener!= null){
+            listener.onClick(v);
+        }
+
+    }
+
+    public void setOnClickLister(View.OnClickListener lister) {
         this.listener = lister;
     }
-*/
+
     public static class FrutaHolder extends RecyclerView.ViewHolder {
         ImageView txturl;
 
