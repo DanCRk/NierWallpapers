@@ -11,17 +11,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.wallpaper.nier.R;
-import com.wallpaper.nier.entidades.Fruta;
+import com.wallpaper.nier.entidades.Fruta2;
 
 import java.util.List;
 
-public class FrutaAdapter extends RecyclerView.Adapter<FrutaAdapter.FrutaHolder>{
+public class FrutaAdapter2 extends RecyclerView.Adapter<FrutaAdapter2.FrutaHolder>{
 
-    List<Fruta> lsita;
+    List<Fruta2> lsita;
     int layout;
     Fragment activity;
 
-    public FrutaAdapter(List<Fruta> lsita, int layout, Fragment activity) {
+
+    public FrutaAdapter2(List<Fruta2> lsita, int layout, Fragment activity) {
         this.lsita = lsita;
         this.layout = layout;
         this.activity = activity;
@@ -36,8 +37,8 @@ public class FrutaAdapter extends RecyclerView.Adapter<FrutaAdapter.FrutaHolder>
 
     @Override
     public void onBindViewHolder(@NonNull FrutaHolder holder, int position) {
-        Fruta fruta = lsita.get(position);
-        Glide.with(activity).load(fruta.getUrlimg()).into(holder.txturl);
+        Fruta2 fruta2 = lsita.get(position);
+        Glide.with(activity).load(fruta2.getUrlimg2()).into(holder.txturl);
     }
 
     @Override
@@ -45,6 +46,10 @@ public class FrutaAdapter extends RecyclerView.Adapter<FrutaAdapter.FrutaHolder>
         return lsita.size();
     }
 
+    /*public void setOnClickLister(View.OnClickListener lister) {
+        this.listener = lister;
+    }
+*/
     public static class FrutaHolder extends RecyclerView.ViewHolder {
         ImageView txturl;
 

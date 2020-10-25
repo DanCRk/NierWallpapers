@@ -5,22 +5,19 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.wallpaper.nier.FrutaService;
+import com.wallpaper.nier.adaptadores.FrutaService;
 import com.wallpaper.nier.R;
 import com.wallpaper.nier.adaptadores.FrutaAdapter;
 import com.wallpaper.nier.entidades.Fruta;
@@ -36,8 +33,7 @@ public class tab2Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tab2, container, false);
         recyclerView = view.findViewById(R.id.recyclerViewTab2);
-        //recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
 
         FrutaAdapter frutaAdapter = new FrutaAdapter(FrutaService.frutas, R.layout.item, getParentFragment());
 

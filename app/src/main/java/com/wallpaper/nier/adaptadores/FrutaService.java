@@ -1,4 +1,4 @@
-package com.wallpaper.nier;
+package com.wallpaper.nier.adaptadores;
 
 import com.wallpaper.nier.entidades.Fruta;
 

@@ -1,12 +1,9 @@
 package com.wallpaper.nier.fragments;
 
-import android.app.WallpaperManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.Build;
 import android.os.Bundle;
 
-import androidx.annotation.RequiresApi;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,67 +11,80 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.wallpaper.nier.adaptadores.FrutaService2;
 import com.wallpaper.nier.R;
-import com.wallpaper.nier.adaptadores.AdapterTab1;
-import com.wallpaper.nier.entidades.Wallpapers;
-
-import java.io.IOException;
-import java.util.ArrayList;
+import com.wallpaper.nier.adaptadores.FrutaAdapter2;
+import com.wallpaper.nier.entidades.Fruta2;
 
 public class tab1Fragment extends Fragment {
 
-    AdapterTab1 adapterTab1;
-    RecyclerView recyclerViewpalabras;
-    ArrayList<Wallpapers> wpp_tab1s;
+
+
+    RecyclerView recyclerView;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tab1, container, false);
-        recyclerViewpalabras = view.findViewById(R.id.recyclerViewTab1);
-        wpp_tab1s = new ArrayList<>();
+        recyclerView = view.findViewById(R.id.recyclerViewTab1);
+
         // Cargar la lista
 
-        cargarLista();
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
 
-        //mostrar datos
+        FrutaAdapter2 frutaAdapter = new FrutaAdapter2(FrutaService2.frutas, R.layout.item, getParentFragment());
 
-        mostrarData();
+
+
+        recyclerView.setAdapter(frutaAdapter);
+
+        cargarDatos();
 
         return view;
     }
 
-    public void cargarLista(){
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_1));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_2));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_3));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_4));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_5));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_6));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_7));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_8));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_9));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_10));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_11));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_12));
-        /*wpp_tab1s.add(new Wallpapers(R.drawable.wpp_13));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_14));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_15));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_16));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_17));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_18));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_19));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_20));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_21));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_22));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_23));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_24));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_25));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_26));
-        wpp_tab1s.add(new Wallpapers(R.drawable.wpp_27));*/
-    }
+
+    public void cargarDatos() {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference reference = database.getReference("Automata");
+        reference.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Fruta2 fruta = snapshot.getValue(Fruta2.class);
+
+                fruta.setId(snapshot.getKey());
+
+                FrutaService2.addFruta(fruta);
+
+                recyclerView.getAdapter().notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
 
    /* @RequiresApi(api = Build.VERSION_CODES.N)
@@ -98,17 +108,5 @@ public class tab1Fragment extends Fragment {
         }
     }*/
 
-    public void mostrarData(){
-        recyclerViewpalabras.setLayoutManager(new GridLayoutManager(getContext(),3));
-        adapterTab1 = new AdapterTab1(getContext(), wpp_tab1s);
-        recyclerViewpalabras.setAdapter(adapterTab1);
-
-        adapterTab1.setOnClickLister(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //setWallpaper();
-                Toast.makeText(getContext(),"Toast", Toast.LENGTH_LONG).show();
-            }
-        });
     }
 }
