@@ -50,14 +50,11 @@ public class AcercadeActivity extends Activity {
             public void onClick(View v) {
                 Intent compartir = new Intent(Intent.ACTION_SEND);
                 compartir.setType("text/plain");
-                String mensaje = "Prueba esta app de Wallpapers de Nier/Nier Automata: https://play.google.com/store/apps/details?id=com.Automat.proyect_dinero";
+                String mensaje = "Prueba esta app de Wallpapers de Nier/Nier Automata: https://play.google.com/store/apps/details?id=com.wallpaper.nier";
                 compartir.putExtra(Intent.EXTRA_SUBJECT,"App prrona");
                 compartir.putExtra(Intent.EXTRA_TEXT, mensaje);
                 startActivity(Intent.createChooser(compartir,"Compartir via"));
             }
         });
-    }
-
-    public void pulsar(View view) {
     }
 }

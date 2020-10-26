@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        url= "https://play.google.com/store/apps/details?id=com.Automat.proyect_dinero";
+        url= "https://play.google.com/store/apps/details?id=com.wallpaper.nier";
 
         // Referenciar las weas locas
 
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (menuItem.getItemId()==R.id.comparte){
             Intent compartir = new Intent(Intent.ACTION_SEND);
             compartir.setType("text/plain");
-            String mensaje = "Prueba esta app de Wallpapers de Nier/Nier Automata: https://play.google.com/store/apps/details?id=com.Automat.proyect_dinero";
+            String mensaje = "Prueba esta app de Wallpapers de Nier/Nier Automata: https://play.google.com/store/apps/details?id=com.wallpaper.nier";
             compartir.putExtra(Intent.EXTRA_SUBJECT,"App prrona");
             compartir.putExtra(Intent.EXTRA_TEXT, mensaje);
             startActivity(Intent.createChooser(compartir,"Compartir via"));

@@ -10,6 +10,6 @@
         android:id="@+id/recyclerViewTab1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="2dp"/>
+        android:paddingTop="1dp"/>
 
 </LinearLayout>
