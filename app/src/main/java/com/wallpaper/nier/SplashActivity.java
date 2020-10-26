@@ -21,10 +21,22 @@ public class SplashActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
 
-        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        //Validar si tiene conexion para dejarlo entrar en la aplicacion
+        if (!EsCon(SplashActivity.this)) builderDialog(SplashActivity.this).show();
 
-            if (networkInfo != null && networkInfo.isConnected()) {
+    }
+
+    public Boolean EsCon(Context context){
+
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo = cm.getActiveNetworkInfo();
+
+        if(networkInfo != null && networkInfo.isConnectedOrConnecting()){
+
+            android.net.NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+            android.net.NetworkInfo mobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -33,31 +45,29 @@ public class SplashActivity extends Activity {
                     finish();
                 }
             }, 2500);
-        } else {
 
-            dialogo();
-
+            return mobile != null && mobile.isConnectedOrConnecting() ||
+                    (wifi != null && wifi.isConnectedOrConnecting());
         }
-
-
-        }
-
-    public void dialogo () {
-        new AlertDialog.Builder(SplashActivity.this).setTitle("No Hay Conexion a Internet").setMessage("La aplicacion no puede cargar el contenido sin una conexion a internet")
-                .setCancelable(false)
-                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                })
-                .setNegativeButton("Cerrar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                })
-                .show();
+        else return false;
 
     }
+
+    //Alerta si no tiene conexion
+    public AlertDialog.Builder builderDialog(Context c){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(c);
+
+        builder.setTitle("No Hay Conexion a Internet");
+        builder.setMessage("Esta aplicacion requiere de conexion a internet para cargar el contenido");
+
+        builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+        return builder;
+    }
+
 }
