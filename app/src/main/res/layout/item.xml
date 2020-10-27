@@ -8,10 +8,9 @@
 
     <ImageView
     android:id="@+id/item_url"
-    android:layout_width="184dp"
-    android:layout_height="320dp"
-    android:layout_marginTop="2dp"
-    android:src="@drawable/splash"
+    android:layout_width="161dp"
+    android:layout_height="351dp"
+    android:src="@drawable/wpp2"
     tools:ignore="ContentDescription" />
 
 
