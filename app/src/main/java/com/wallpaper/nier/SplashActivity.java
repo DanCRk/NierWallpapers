@@ -58,7 +58,7 @@ public class SplashActivity extends Activity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(c);
 
-        builder.setTitle("No Hay Conexion a Internet");
+        builder.setTitle("Sin Conexion a Internet");
         builder.setMessage("Esta aplicacion requiere de conexion a internet para cargar el contenido");
 
         builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {

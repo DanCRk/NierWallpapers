@@ -35,7 +35,7 @@ public class tab2Fragment extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerViewTab2);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
 
-        FrutaAdapter frutaAdapter = new FrutaAdapter(FrutaService.frutas, R.layout.item, getParentFragment());
+        FrutaAdapter frutaAdapter = new FrutaAdapter(FrutaService.frutas, R.layout.item, getParentFragment(), getContext());
 
         recyclerView.setAdapter(frutaAdapter);
 
