@@ -25,7 +25,6 @@ import com.wallpaper.nier.entidades.Fruta2;
 public class tab1Fragment extends Fragment {
 
     RecyclerView recyclerView;
-    FrutaAdapter2 frutaAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
