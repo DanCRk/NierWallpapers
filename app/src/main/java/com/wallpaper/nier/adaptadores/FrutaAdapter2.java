@@ -1,6 +1,5 @@
 package com.wallpaper.nier.adaptadores;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -48,11 +47,15 @@ public class FrutaAdapter2 extends RecyclerView.Adapter<FrutaAdapter2.FrutaHolde
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fruta2 fruta2 = lsita.get(position);
-                Intent intent = new Intent(v.getContext(), Vista.class);
-                intent.putExtra("ItemKey", fruta2.getUrlimg2());
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
+                try {
+                    Fruta2 fruta2 = lsita.get(position);
+                    Intent intent = new Intent(v.getContext(), Vista.class);
+                    intent.putExtra("ItemKey", fruta2.getUrlimg2());
+                    context.startActivity(intent);
+                }catch(Exception e) {
+                    Toast.makeText(v.getContext(), "Error, vuelve a pulsar.", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                }
             }
         });
     }

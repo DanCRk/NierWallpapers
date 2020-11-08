@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -30,16 +31,10 @@ public class tab1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tab1, container, false);
         recyclerView = view.findViewById(R.id.recyclerViewTab1);
-
         cargarDatos();
-
         cargarLista();
-
         return view;
     }
-
-
-
 
     public void cargarLista(){
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
@@ -55,13 +50,14 @@ public class tab1Fragment extends Fragment {
         reference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                Fruta2 fruta = snapshot.getValue(Fruta2.class);
-
-                fruta.setId(snapshot.getKey());
-
-                FrutaService2.addFruta(fruta);
-
-                recyclerView.getAdapter().notifyDataSetChanged();
+                try {
+                    Fruta2 fruta = snapshot.getValue(Fruta2.class);
+                    fruta.setId(snapshot.getKey());
+                    FrutaService2.addFruta(fruta);
+                    recyclerView.getAdapter().notifyDataSetChanged();
+                }catch (Exception e){
+                    Toast.makeText(getContext(), "Error, no se pueden cargar los datos.", Toast.LENGTH_SHORT).show();
+                }
             }
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) { }

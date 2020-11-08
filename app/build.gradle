@@ -14,8 +14,8 @@ android {
         applicationId "com.wallpaper.nier"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 5
-        versionName "2.0.1"
+        versionCode 6
+        versionName "3.0.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -38,6 +38,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation files('libs/mail.jar')
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'androidx.navigation:navigation-fragment:2.3.1'
     implementation 'androidx.navigation:navigation-ui:2.3.1'

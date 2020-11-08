@@ -28,9 +28,11 @@
         <activity
             android:name=".AcercadeActivity"
             android:theme="@style/AppTheme" />
+        <activity android:name=".SugerenciasActivity"/>
+        <activity android:name=".AyudaActivity"/>
         <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main" />
+        android:name=".MainActivity"
+        android:label="@string/title_activity_main" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Splash">

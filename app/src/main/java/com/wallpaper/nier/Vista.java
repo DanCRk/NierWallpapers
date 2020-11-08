@@ -37,13 +37,13 @@ public class Vista extends AppCompatActivity {
     ImageView img;
     Button set, lock, dsg, comparte;
 
-    private InterstitialAd mInterstitialAd;
+    private InterstitialAd mInterstitialAd = null;
+    private InterstitialAd mInterstitialAd2= null;
+    private InterstitialAd mInterstitialAd3= null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.item_view);
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -79,19 +79,17 @@ public class Vista extends AppCompatActivity {
                 //convertir imagen
                 img.buildDrawingCache();
                 Bitmap bmap = img.getDrawingCache();
-
                 //guardar imagen
                 Save savefile = new Save();
                 savefile.SaveImage(Vista.this, bmap);
             }
         });
-
         set.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
-                if (mInterstitialAd.isLoaded()) {
-                    mInterstitialAd.show();
+                if (mInterstitialAd2.isLoaded()) {
+                    mInterstitialAd2.show();
                 } else {
                     Log.d("TAG", "The interstitial wasn't loaded yet.");
                 }
@@ -100,18 +98,20 @@ public class Vista extends AppCompatActivity {
                 Bitmap bit = drawable.getBitmap();
                 try {
                     wallpaperManager.setBitmap(bit);
+                    Toast.makeText(Vista.this, "Listo!", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
+                    Toast.makeText(Vista.this, "No se establecio el wallpaper", Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
-                Toast.makeText(Vista.this, "Listo!", Toast.LENGTH_SHORT).show();
+
             }
         });
 
         lock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mInterstitialAd.isLoaded()) {
-                    mInterstitialAd.show();
+                if (mInterstitialAd3.isLoaded()) {
+                    mInterstitialAd3.show();
                 } else {
                     Log.d("TAG", "The interstitial wasn't loaded yet.");
                 }
@@ -121,11 +121,12 @@ public class Vista extends AppCompatActivity {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                     try {
                         wallpaperManager.setBitmap(bit,null,true,WallpaperManager.FLAG_LOCK);
+                        Toast.makeText(Vista.this, "Listo!", Toast.LENGTH_SHORT).show();
                     } catch (IOException e) {
+                        Toast.makeText(Vista.this, "No se establecio el wallpaper", Toast.LENGTH_SHORT).show();
                         e.printStackTrace();
                     }
                 }
-                Toast.makeText(Vista.this, "Listo!", Toast.LENGTH_SHORT).show();
             }
         });
     }

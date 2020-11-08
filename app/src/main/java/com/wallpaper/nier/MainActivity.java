@@ -93,6 +93,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             compartir.putExtra(Intent.EXTRA_TEXT, mensaje);
             startActivity(Intent.createChooser(compartir,"Compartir via"));
         }
+        if (menuItem.getItemId()==R.id.ayuda){
+            Intent intent = new Intent(MainActivity.this, AyudaActivity.class);
+            startActivity(intent);
+        }
         return false;
     }
 }
