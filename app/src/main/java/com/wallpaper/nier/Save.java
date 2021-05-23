@@ -42,7 +42,7 @@ public class Save {
         try {
             FileOutputStream fOut = new FileOutputStream(file);
 
-            ImageToSave.compress(Bitmap.CompressFormat.JPEG, 85, fOut);
+            ImageToSave.compress(Bitmap.CompressFormat.JPEG, 85, fOut); // error java.lang.NullPointerException
             fOut.flush();
             fOut.close();
             MakeSureFileWasCreatedThenMakeAvabile(file);

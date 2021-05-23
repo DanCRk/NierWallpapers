@@ -51,6 +51,7 @@ public class FrutaAdapter2 extends RecyclerView.Adapter<FrutaAdapter2.FrutaHolde
                     Fruta2 fruta2 = lsita.get(position);
                     Intent intent = new Intent(v.getContext(), Vista.class);
                     intent.putExtra("ItemKey", fruta2.getUrlimg2());
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);
                 }catch(Exception e) {
                     Toast.makeText(v.getContext(), "Error, vuelve a pulsar.", Toast.LENGTH_SHORT).show();

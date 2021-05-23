@@ -14,8 +14,8 @@ android {
         applicationId "com.wallpaper.nier"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 6
-        versionName "3.0.2"
+        versionCode 8
+        versionName "3.0.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -15,7 +15,7 @@ public class AyudaActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ayuda);
+        setContentView(R.layout.activity_ayuda); // error  java.lang.RuntimeException
 
         textView = findViewById(R.id.boton_atras);
 

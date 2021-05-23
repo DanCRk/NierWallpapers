@@ -15,8 +15,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -37,9 +35,9 @@ public class Vista extends AppCompatActivity {
     ImageView img;
     Button set, lock, dsg, comparte;
 
-    private InterstitialAd mInterstitialAd = null;
-    private InterstitialAd mInterstitialAd2= null;
-    private InterstitialAd mInterstitialAd3= null;
+    private InterstitialAd mInterstitialAd ;
+    private InterstitialAd mInterstitialAd2;
+    private InterstitialAd mInterstitialAd3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +53,14 @@ public class Vista extends AppCompatActivity {
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-2030839089746380/7018773729");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+        mInterstitialAd2 = new InterstitialAd(this);
+        mInterstitialAd2.setAdUnitId("ca-app-pub-2030839089746380/7018773729");
+        mInterstitialAd2.loadAd(new AdRequest.Builder().build());
+
+        mInterstitialAd3 = new InterstitialAd(this);
+        mInterstitialAd3.setAdUnitId("ca-app-pub-2030839089746380/7018773729");
+        mInterstitialAd3.loadAd(new AdRequest.Builder().build());
 
         img = findViewById(R.id.imagen_itemview);
         lock = findViewById(R.id.buttonlockwpp);
@@ -93,10 +99,10 @@ public class Vista extends AppCompatActivity {
                 } else {
                     Log.d("TAG", "The interstitial wasn't loaded yet.");
                 }
-                WallpaperManager wallpaperManager = WallpaperManager.getInstance(getApplicationContext());
-                BitmapDrawable drawable = (BitmapDrawable) img.getDrawable();
-                Bitmap bit = drawable.getBitmap();
                 try {
+                    WallpaperManager wallpaperManager = WallpaperManager.getInstance(getApplicationContext());
+                    BitmapDrawable drawable = (BitmapDrawable) img.getDrawable();
+                    Bitmap bit = drawable.getBitmap();  // error java.lang.NullPointerException
                     wallpaperManager.setBitmap(bit);
                     Toast.makeText(Vista.this, "Listo!", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
@@ -115,11 +121,11 @@ public class Vista extends AppCompatActivity {
                 } else {
                     Log.d("TAG", "The interstitial wasn't loaded yet.");
                 }
-                WallpaperManager wallpaperManager = WallpaperManager.getInstance(getApplicationContext());
-                BitmapDrawable drawable = (BitmapDrawable) img.getDrawable();
-                Bitmap bit = drawable.getBitmap();
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                     try {
+                        WallpaperManager wallpaperManager = WallpaperManager.getInstance(getApplicationContext());
+                        BitmapDrawable drawable = (BitmapDrawable) img.getDrawable();
+                        Bitmap bit = drawable.getBitmap();  // error java.lang.NullPointerException
                         wallpaperManager.setBitmap(bit,null,true,WallpaperManager.FLAG_LOCK);
                         Toast.makeText(Vista.this, "Listo!", Toast.LENGTH_SHORT).show();
                     } catch (IOException e) {
